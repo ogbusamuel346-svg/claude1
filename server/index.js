@@ -11,8 +11,8 @@ const app = express();
 const port = Number(process.env.PORT || 3001);
 const root = path.dirname(fileURLToPath(import.meta.url));
 const storePath = path.join(root, '../data/school.json');
-const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.VITE_SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 const supabaseConfigured = Boolean(supabaseUrl && supabaseKey);
 if (process.env.NODE_ENV === 'production' && !supabaseConfigured) throw new Error('SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY must be configured in production.');
 const supabaseAuth = supabaseConfigured ? createClient(supabaseUrl, supabaseKey, { auth: { autoRefreshToken: false, persistSession: false, detectSessionInUrl: false } }) : null;
@@ -780,4 +780,7 @@ app.use((error, _req, res, _next) => {
   res.status(500).json({ message: 'The request could not be completed.' });
 });
 
-app.listen(port, () => console.log(`SSMS API listening on http://localhost:${port} (${supabaseConfigured ? 'Supabase' : 'local JSON demo'} mode)`));
+const isDirectRun = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isDirectRun) app.listen(port, () => console.log(`SSMS API listening on http://localhost:${port} (${supabaseConfigured ? 'Supabase' : 'local JSON demo'} mode)`));
+
+export default app;

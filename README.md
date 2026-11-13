@@ -30,6 +30,12 @@ where p.id = u.id and u.email = 'admin@your-school.example';
 
 The client and API use the publishable key and the signed-in user's access token. Never place a Supabase secret/service-role key in a `VITE_` variable or browser code. Row-level security scopes database access. The migration creates a private `school-documents` bucket; file upload screens are not implemented yet.
 
+## Deploy to Vercel
+
+The repository includes `vercel.json` and a serverless adapter at `api/index.js` so Vercel serves both the React single-page app and the Express API. In the Vercel project settings, configure `SUPABASE_URL` and `SUPABASE_ANON_KEY` (or `SUPABASE_PUBLISHABLE_KEY`) for Production, Preview, and Development, then redeploy. The Vite build maps those public URL/key variables into the browser client; it never maps service-role or secret keys. You can alternatively configure `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`; Vercel must have these set at build time. A production build with no supported public Supabase configuration shows a setup message instead of demo login.
+
+Vercel serverless requests use the same public Supabase key with each signed-in user's bearer token, preserving the database's row-level security. Do not configure `SUPABASE_SERVICE_ROLE_KEY` as a `VITE_` or `NEXT_PUBLIC_` variable. After pushing to the connected GitHub branch, confirm Vercel builds the latest commit and redeploys the Production environment.
+
 ## Teacher signup and student admissions
 
 Apply `supabase/migrations/20261115000000_profile_email_for_staff_directory.sql`, `supabase/migrations/20261116000000_teacher_signup_student_admissions.sql`, then `supabase/migrations/20261117000000_parent_signup_role.sql`. The landing page and sign-in page link to **Teacher sign up**, **Parent sign up**, and **Student registration**. Teacher and parent self-signup create only their respective roles; teachers still have no class or student access until an admin assigns class-subject pairs in **Staff → Teachers & classes**. Parent accounts see children only after an administrator links them. Other public signups default to the student role, so public users cannot self-assign administrator privileges.

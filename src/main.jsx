@@ -184,6 +184,7 @@ function App() {
     window.setTimeout(() => setNotice(''), 3500);
   }
 
+  if (import.meta.env.PROD && !supabaseEnabled) return <DeploymentConfigurationPage />;
   if (route === '/') return <LandingPage onEnter={() => navigate('/login')} onTeacherSignup={() => navigate('/teacher-signup')} onParentSignup={() => navigate('/parent-signup')} onStudentRegistration={() => navigate('/student-registration')} />;
   if (route === '/teacher-signup') return <TeacherSignupPage onSubmit={signUpTeacher} onSignIn={() => navigate('/login')} onHome={() => navigate('/')} supabaseEnabled={supabaseEnabled} />;
   if (route === '/parent-signup') return <ParentSignupPage onSubmit={signUpParent} onSignIn={() => navigate('/login')} onHome={() => navigate('/')} supabaseEnabled={supabaseEnabled} />;
@@ -241,6 +242,10 @@ function Metric({label,value,delta,direction,note,icon:Icon,tone,spark}){return 
 const demoAccounts = [
   ['school_admin','Admin Officer','admin@northstar.demo'],['teacher','Samuel Adeola','teacher@northstar.demo'],['student','Amara Okafor','student@northstar.demo'],['parent','Chika Okafor','parent@northstar.demo'],['bursar','Rose Eze','bursar@northstar.demo'],['librarian','Peter Akin','librarian@northstar.demo'],
 ];
+
+function DeploymentConfigurationPage() {
+  return <main className="auth-page"><section className="auth-card deployment-config-card"><span className="auth-icon"><Settings size={19}/></span><h1>Connect the school portal</h1><p>This production build cannot find the public Supabase URL and publishable key, so sign-in is unavailable.</p><div className="registration-flow-hint"><strong>In Vercel → Project → Settings → Environment Variables</strong><p>Add <code>SUPABASE_URL</code> and <code>SUPABASE_ANON_KEY</code> (or the corresponding <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_PUBLISHABLE_KEY</code>). Use the Supabase project URL and publishable/anon key only. Then redeploy so the frontend receives them during its build.</p></div><p className="public-form-footnote">Never put a Supabase secret or service-role key in a browser-exposed variable.</p></section></main>;
+}
 
 function LoginPage({onLogin,onHome,onTeacherSignup,onParentSignup,onStudentRegistration,password,supabaseEnabled=false}) {
   const [email,setEmail]=useState(supabaseEnabled?'':'admin@northstar.demo');
