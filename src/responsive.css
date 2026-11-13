@@ -1,0 +1,668 @@
+/* Loaded after the dashboard and landing styles so responsive rules win. */
+@media (max-width: 900px) {
+  .landing-nav { padding: 0 24px; }
+  .landing-nav nav { display: none; }
+  .landing-nav > div { gap: 12px; }
+  .landing-hero { display: flex; flex-direction: column; align-items: stretch; max-width: 700px; padding: 52px 28px 44px; gap: 24px; }
+  .hero-copy { padding: 0; }
+  .hero-copy h1 { font-size: 54px; }
+  .hero-visual { min-height: 390px; }
+  .preview-window { width: min(100%, 610px); transform: none; }
+  .landing-trust { margin: 0 24px; }
+  .landing-features { display: block; }
+  .feature-grid { margin-top: 28px; }
+  .landing-bottom { padding: 42px 38px; }
+}
+@media (max-width: 680px) {
+  .landing-nav { height: 64px; padding: 0 16px; }
+  .landing-brand { font-size: 17px; }
+  .landing-nav > div { gap: 8px; }
+  .landing-signin { font-size: 10px; }
+  .landing-cta { height: 33px; padding: 0 9px; font-size: 10px; }
+  .landing-hero { padding: 47px 19px 38px; gap: 20px; }
+  .hero-copy h1 { font-size: 45px; letter-spacing: -2.2px; margin-top: 18px; }
+  .hero-copy > p { font-size: 12px; }
+  .hero-actions { gap: 13px; flex-wrap: wrap; margin-top: 20px; }
+  .hero-actions .button { height: 39px; }
+  .hero-proof { margin-top: 24px; }
+  .hero-visual { min-height: 280px; margin: 0 -8px; }
+  .visual-glow { width: 290px; height: 290px; }
+  .preview-window { width: 100%; }
+  .preview-body { min-height: 220px; }
+  .preview-sidebar { width: 48px; padding: 10px 6px; }
+  .preview-content { padding: 12px; }
+  .preview-stats { gap: 4px; }
+  .preview-stats > div { padding: 6px; }
+  .preview-panels { gap: 5px; }
+  .preview-chart, .preview-note { height: 90px; padding: 6px; }
+  .preview-chart > div { height: 55px; gap: 3px; }
+  .preview-table { margin-top: 7px; }
+  .floating-note { right: -2px; bottom: -9px; padding: 7px 9px; }
+  .hero-orbit { display: none; }
+  .landing-trust { margin: 0 19px; display: grid; gap: 15px; padding: 18px 2px; }
+  .landing-trust > div { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+  .landing-features { margin: 0 19px; padding: 54px 0; }
+  .section-intro h2 { font-size: 31px; }
+  .section-intro > p { font-size: 11px; }
+  .feature-grid { margin-top: 23px; }
+  .landing-bottom { padding: 34px 20px; grid-template-columns: 1fr; gap: 14px; }
+  .landing-bottom h2 { font-size: 27px; }
+  .landing-bottom > div > p { font-size: 11px; }
+  .landing-footer { padding: 18px 20px; gap: 7px; flex-wrap: wrap; }
+  .landing-footer > span { font-size: 8px; }
+  .landing-footer > span:nth-child(2) { display: none; }
+  .directory-summary { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .setup-grid { grid-template-columns: 1fr; }
+  .setup-wide { grid-column: auto; }
+  .class-summary { grid-template-columns: 1fr; }
+  .placeholder-actions { flex-direction: column; width: min(260px, 100%); }
+}
+
+/* Nigerian classroom visual system for the landing and public registration pages. */
+.landing-hero {
+  position:relative;
+  isolation:isolate;
+  border-radius:0 0 28px 28px;
+  background-image:linear-gradient(90deg,rgba(251,252,250,.98) 0%,rgba(251,252,250,.94) 31%,rgba(251,252,250,.72) 51%,rgba(251,252,250,.12) 100%),url('/images/nigerian-classroom.svg');
+  background-size:cover;
+  background-position:center 46%;
+}
+.hero-visual { z-index:0; }
+.hero-visual::before {
+  content:'';
+  position:absolute;
+  inset:8px -18px 0;
+  border-radius:24px;
+  background-image:linear-gradient(180deg,rgba(24,57,43,.05),rgba(24,57,43,.2)),url('/images/nigerian-classroom.svg');
+  background-size:cover;
+  background-position:center 55%;
+  box-shadow:0 24px 65px rgba(30,55,42,.12);
+}
+.hero-visual .visual-glow { opacity:.32; }
+.preview-window { box-shadow:0 28px 75px rgba(23,57,43,.23); }
+.landing-trust { position:relative; z-index:1; }
+.public-form-layout { width:min(1160px,calc(100% - 48px)); gap:38px; align-items:stretch; }
+.public-form-intro {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  min-height:340px;
+  padding:34px 30px;
+  border-radius:18px;
+  background-image:linear-gradient(155deg,rgba(11,48,37,.89),rgba(15,75,57,.75)),url('/images/nigerian-classroom.svg');
+  background-size:cover;
+  background-position:57% center;
+  box-shadow:0 18px 45px rgba(29,61,46,.16);
+}
+.public-form-intro>* { position:relative; z-index:1; }
+.public-form-intro .hero-badge { color:#e8f4ed; background:rgba(255,255,255,.13); border-color:rgba(255,255,255,.26); }
+.public-form-intro .hero-badge>span { background:#c1e08b; box-shadow:0 0 0 4px rgba(193,224,139,.18); }
+.public-form-intro h1 { color:#fff; font-size:clamp(36px,4vw,49px); font-weight:800; letter-spacing:-1.6px; }
+.public-form-intro>p { color:rgba(255,255,255,.84); font-size:16px; line-height:1.75; }
+.public-form-intro .auth-intro-note { color:#f0f5ee; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.16); border-radius:10px; padding:11px 13px; }
+.public-form-card { max-width:none; padding:28px; border:1px solid #e1eae3; border-radius:18px; box-shadow:0 18px 50px rgba(33,60,48,.10); }
+.public-form-card .auth-card-heading { margin-bottom:18px; }
+.public-form-card .auth-card-heading h2 { font-size:25px; font-weight:800; }
+.public-form-card .auth-card-heading p { font-size:14px; }
+.public-form-card>.auth-label,.student-application-fields .auth-label { font-size:14px; font-weight:700; color:#40534a; }
+.public-form-card .auth-input { min-height:46px; border-radius:9px; border-color:#d9e4dc; font-size:15px; }
+.public-form-card .auth-input:focus { border-color:#2b8a6a; box-shadow:0 0 0 3px rgba(43,138,106,.12); }
+.student-application-card { max-width:none; }
+.student-application-fields .auth-input { min-height:46px; font-size:15px; }
+.registration-flow-hint { background:#f1f7ef; border-color:#d9e9d5; font-size:13px; }
+.public-form-card .auth-submit { min-height:46px; border-radius:9px; font-size:15px; font-weight:800; }
+@media (max-width: 900px) {
+  .landing-hero { background-position:62% center; }
+  .public-form-layout,.student-application-layout { grid-template-columns:1fr; gap:18px; }
+  .public-form-intro { min-height:250px; padding:28px; background-position:center 43%; }
+  .public-form-intro h1 { max-width:680px; }
+  .public-form-card { width:100%; }
+}
+@media (max-width: 680px) {
+  .landing-hero { border-radius:0 0 20px 20px; background-image:linear-gradient(180deg,rgba(251,252,250,.95),rgba(251,252,250,.88) 48%,rgba(251,252,250,.68)),url('/images/nigerian-classroom.svg'); background-position:60% center; }
+  .public-form-layout { width:calc(100% - 28px); margin-top:24px; gap:14px; }
+  .public-form-intro { min-height:220px; padding:22px; border-radius:14px; }
+  .public-form-intro h1 { font-size:34px; }
+  .public-form-intro>p { font-size:14px; }
+  .public-form-card { padding:20px 17px; border-radius:14px; }
+  .public-form-card>.auth-label,.student-application-fields .auth-label { font-size:13px; }
+}
+
+.auth-page { min-height:100vh; background:radial-gradient(circle at 7% 15%,#e3f0eb 0,transparent 31%),#f7faf8; padding:0 26px; color:#26302f; }
+.auth-brand-row { max-width:1160px; height:75px; margin:auto; display:flex; align-items:center; justify-content:space-between; }
+.auth-brand-row .landing-brand { border:0; background:transparent; cursor:pointer; }
+.demo-label { color:#88958f; font-size:8px; font-weight:700; letter-spacing:1.1px; }
+.auth-layout { max-width:1050px; min-height:calc(100vh - 135px); margin:auto; display:grid; grid-template-columns:.85fr 1.15fr; align-items:center; gap:56px; padding:25px 10px 55px; }
+.auth-intro h1 { max-width:420px; color:#25312d; font:700 47px/1.14 'Manrope'; letter-spacing:-2px; margin-top:20px; }
+.auth-intro>p { max-width:370px; color:#78847e; font-size:13px; line-height:1.7; margin-top:15px; }
+.auth-intro-note { display:flex; align-items:center; gap:9px; color:#638076; font-size:10px; margin-top:30px; }
+.auth-card { background:#fff; border:1px solid #e5ebe7; border-radius:14px; box-shadow:0 20px 60px #2a433916; padding:26px; max-width:510px; width:100%; }
+.auth-card-heading { text-align:center; display:grid; justify-items:center; }
+.auth-icon { width:36px; height:36px; display:grid; place-items:center; border-radius:10px; color:#0e766e; background:#e5f3ee; }
+.auth-card-heading h2 { font:700 19px 'Manrope'; margin-top:11px; }
+.auth-card-heading p { font-size:10px; color:#8a9690; margin-top:5px; }
+.auth-card form { margin-top:18px; }
+.auth-label { display:block; color:#59645f; font-size:9px; font-weight:700; margin:12px 0 7px; }
+.role-picker { max-height:205px; overflow:auto; display:grid; grid-template-columns:1fr 1fr; gap:6px; padding:2px; }
+.role-option { min-height:47px; border:1px solid #e9eeeb; border-radius:7px; background:#fff; padding:6px 7px; display:flex; align-items:center; gap:7px; text-align:left; color:#59645f; }
+.role-option:hover { border-color:#b5d8cc; background:#f9fcfa; }
+.role-option.selected { border-color:#83b9a8; background:#eef7f3; box-shadow:0 0 0 2px #e8f3ee; }
+.role-option-icon { height:26px; width:26px; flex:none; border-radius:7px; background:#f1f4f2; color:#638076; display:grid; place-items:center; }
+.role-option>span:nth-child(2) { min-width:0; flex:1; display:grid; gap:3px; }
+.role-option strong { font-size:8px; line-height:1.2; }
+.role-option small { color:#929c97; font-size:7px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.role-option>svg { color:#0e766e; flex:none; }
+.password-label { margin-top:13px; }
+.auth-input { width:100%; height:36px; border:1px solid #e2e8e4; border-radius:6px; padding:0 10px; outline:0; color:#3f4a45; font-size:10px; }
+.auth-input:focus { border-color:#72a998; box-shadow:0 0 0 3px #0e766e12; }
+.demo-hint { display:flex; justify-content:space-between; align-items:center; margin-top:7px; color:#8c9691; font-size:8px; }
+.demo-hint code { padding:3px 5px; border-radius:4px; background:#f3f6f4; color:#64736c; font:8px 'DM Sans'; }
+.auth-error { border:1px solid #f1d4d6; background:#fff4f4; color:#a3424b; border-radius:6px; padding:8px 10px; font-size:9px; margin-top:10px; }
+.auth-submit { width:100%; height:38px; margin-top:13px; }
+.auth-submit:disabled { opacity:.65; cursor:wait; }
+.auth-security { display:flex; justify-content:center; align-items:center; gap:5px; margin-top:15px; color:#8b9690; font-size:8px; }
+.auth-security svg { color:#72a18f; }
+.auth-footer { max-width:1160px; height:44px; margin:auto; border-top:1px solid #e7eeea; display:flex; justify-content:space-between; align-items:center; color:#929b96; font-size:8px; }
+.auth-footer button { border:0; background:transparent; color:#57766a; font-size:8px; }
+.portal-shell { min-height:100vh; background:#f7f8fa; color:#252e33; }
+.portal-header { height:66px; background:#fff; border-bottom:1px solid #e9edef; display:flex; align-items:center; justify-content:space-between; padding:0 max(22px,calc((100vw - 1160px)/2)); }
+.portal-header .landing-brand { border:0; background:transparent; cursor:pointer; }
+.portal-school { display:flex; align-items:center; gap:9px; margin-left:auto; margin-right:24px; }
+.portal-school>div:last-child { display:grid; gap:3px; }
+.portal-school strong { font-size:10px; }
+.portal-school small { color:#8a949a; font-size:8px; }
+.portal-signout { display:flex; align-items:center; gap:7px; border:1px solid #e4e9ec; border-radius:6px; background:#fff; color:#626e75; height:31px; padding:0 10px; font-size:9px; }
+.portal-content { max-width:1120px; margin:auto; padding:34px 24px 20px; }
+.portal-welcome { display:flex; justify-content:space-between; align-items:center; margin-bottom:22px; }
+.portal-welcome h1 { font:700 25px 'Manrope'; letter-spacing:-.8px; margin-top:9px; }
+.portal-welcome p { color:#879198; font-size:11px; margin-top:6px; }
+.portal-avatar { width:42px; height:42px; display:grid; place-items:center; border-radius:50%; background:#e5f3ee; color:#277c6b; font-size:12px; font-weight:700; }
+.portal-tabs { display:flex; gap:4px; overflow:auto; border-bottom:1px solid #e5e9ec; margin-bottom:17px; }
+.portal-tabs button { flex:none; border:0; border-bottom:2px solid transparent; background:transparent; color:#818a91; padding:10px 12px; font-size:10px; }
+.portal-tabs button.portal-tab-active { color:#0e766e; border-bottom-color:#0e766e; font-weight:700; }
+.portal-metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.portal-metric { position:relative; min-height:112px; padding:14px; border:1px solid #e9edef; border-radius:9px; background:#fff; box-shadow:0 2px 8px #19212906; display:grid; align-content:start; gap:7px; }
+.portal-metric>span { color:#79848b; font-size:9px; }
+.portal-metric>.metric-icon { position:absolute; right:12px; top:11px; width:27px; height:27px; }
+.portal-metric>strong { font:700 21px 'Manrope'; letter-spacing:-.45px; margin-top:4px; }
+.portal-metric>small { color:#969fa5; font-size:8px; }
+.portal-lower { display:grid; grid-template-columns:1.55fr 1fr; gap:13px; margin-top:13px; }
+.portal-main-card,.portal-side-card { padding:17px; }
+.portal-chip { background:#eef6f3; border-radius:20px; padding:5px 8px; color:#3b8a78; font-size:8px; }
+.child-card { margin-top:20px; padding:13px; display:flex; align-items:center; gap:10px; background:#fbfcfb; border:1px solid #edf0ee; border-radius:8px; }
+.child-card>div:nth-child(2) { display:grid; gap:4px; flex:1; }
+.child-card>div:nth-child(2) strong { font-size:10px; }
+.child-card>div:nth-child(2) span { font-size:8px; color:#8c969b; }
+.class-list { margin-top:12px; }
+.class-row { display:flex; align-items:center; gap:9px; padding:11px 2px; border-bottom:1px solid #eef0f2; color:#758087; }
+.class-row>div { flex:1; display:grid; gap:4px; }
+.class-row strong { color:#404a50; font-size:9px; }
+.class-row small { color:#929ba1; font-size:8px; }
+.class-icon { width:28px; height:28px; display:grid; place-items:center; border-radius:7px; color:#218373; background:#e7f4ef; }
+.portal-summary-text { display:grid; gap:11px; margin-top:20px; }
+.portal-summary-text p { display:flex; align-items:center; gap:7px; color:#6f7b82; font-size:9px; }
+.portal-summary-text svg { color:#248a76; }
+.portal-side-card>.panel-heading>svg { color:#829088; }
+.portal-event { display:flex; align-items:center; gap:9px; padding:11px 0; border-bottom:1px solid #eef0f2; }
+.portal-event>div { display:grid; gap:4px; }
+.portal-event strong { color:#434e53; font-size:9px; }
+.portal-event small { color:#969fa4; font-size:8px; }
+.portal-side-card>.text-link { margin-top:14px; }
+.portal-detail { max-width:700px; min-height:250px; margin:0 auto; padding:27px; }
+.portal-detail h2 { font:700 19px 'Manrope'; margin-top:10px; }
+.portal-detail>p { max-width:480px; color:#879198; font-size:11px; line-height:1.7; margin:8px 0 18px; }
+.result-preview { display:grid; grid-template-columns:1fr auto; gap:10px; border:1px solid #edf0f2; border-radius:7px; padding:12px; margin:12px 0 17px; }
+.result-preview strong,.result-preview span { font-size:9px; }
+.result-preview span { color:#728079; }
+.portal-footer { padding:23px 2px 0; display:flex; justify-content:space-between; color:#9aa2a7; font-size:8px; }
+.portal-footer span:last-child { display:flex; align-items:center; gap:5px; }
+.portal-footer svg { color:#60a18e; }
+@media (max-width: 900px) { .auth-layout{max-width:700px;grid-template-columns:1fr;gap:25px;padding-top:20px}.auth-intro h1{font-size:36px;max-width:550px}.auth-intro>p{margin-top:10px}.auth-intro-note{margin-top:14px}.auth-card{max-width:100%}.auth-page{padding:0 20px}.portal-content{padding:26px 20px}.portal-header{padding:0 20px} }
+@media (max-width: 680px) { .auth-page{padding:0 14px}.auth-brand-row{height:61px}.auth-layout{min-height:auto;padding:28px 0 35px;gap:22px}.auth-intro h1{font-size:30px;letter-spacing:-1.1px}.auth-intro>p{font-size:11px}.auth-card{padding:18px}.role-picker{max-height:235px;grid-template-columns:1fr 1fr;gap:5px}.role-option{min-height:43px;padding:5px}.role-option-icon{height:23px;width:23px}.role-option strong{font-size:7px}.role-option small{font-size:6px}.auth-footer{height:40px}.portal-header{height:58px;padding:0 12px}.portal-header .landing-brand{font-size:15px}.portal-school{margin-right:10px;gap:6px}.portal-school .school-avatar{height:27px;width:27px}.portal-school strong{font-size:8px}.portal-school small{font-size:7px}.portal-signout{height:29px;padding:0 7px;font-size:8px}.portal-content{padding:23px 13px}.portal-welcome h1{font-size:20px}.portal-welcome p{font-size:9px}.portal-metrics{grid-template-columns:1fr 1fr;gap:8px}.portal-metric{min-height:102px;padding:11px}.portal-metric>strong{font-size:18px}.portal-lower{grid-template-columns:1fr;gap:9px}.portal-main-card,.portal-side-card{padding:14px}.portal-tabs button{padding:10px 9px;font-size:9px}.portal-footer{gap:8px;flex-wrap:wrap}.portal-detail{padding:19px;min-height:230px}.portal-school small{max-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis} }
+
+/* Larger type throughout: labels stay compact, while reading text and controls get more room. */
+.brand { font-size:22px; }
+.school-copy strong,.profile-copy strong { font-size:13px; }
+.school-copy span,.profile-copy span,.term-card span { font-size:11px; }
+.nav-title { font-size:10px; }
+.nav-item { font-size:13px; }
+.nav-item small { font-size:11px; }
+.topbar { font-size:13px; }
+.breadcrumb { font-size:12px; }
+.search-box input { font-size:12px; }
+.page-heading h1 { font-size:29px; }
+.page-heading p { font-size:14px; }
+.eyebrow { font-size:10px; }
+.button { font-size:12px; }
+.metric-top { font-size:13px; }
+.metric-value { font-size:25px; }
+.metric-change { font-size:10px; }
+.metric-change>span:first-child { font-size:10px; }
+.panel-heading h2 { font-size:15px; }
+.panel-heading p { font-size:12px; }
+.chart-meta small { font-size:10px; }
+.chart-legend { font-size:10px; }
+.calendar-month { font-size:12px; }
+.cal-day-name { font-size:10px; }
+.cal-date { font-size:10px; }
+.event-copy strong { font-size:11px; }
+.event-copy span { font-size:10px; }
+.text-link,.payments-link { font-size:11px; }
+thead th { font-size:9px; }
+tbody td { font-size:11px; }
+.student-cell strong { font-size:11px; }
+.status { font-size:9px; }
+.payment-copy strong,.payment-right>strong { font-size:11px; }
+.payment-copy span,.payment-status { font-size:9px; }
+footer { font-size:9px; }
+.modal label { font-size:12px; }
+.modal input,.modal select { font-size:12px; }
+.directory-summary>div span { font-size:12px; }
+.directory-hint { font-size:11px; }
+.directory-count { font-size:10px; }
+.setup-chip { font-size:11px; }
+.class-summary-row { font-size:11px; }
+.module-placeholder h2 { font-size:21px; }
+.module-placeholder p { font-size:13px; }
+.landing-nav nav a { font-size:13px; }
+.landing-signin { font-size:12px; }
+.landing-cta { font-size:12px; }
+.hero-badge { font-size:9px; }
+.hero-copy>p { font-size:15px; }
+.hero-secondary { font-size:12px; }
+.hero-proof p { font-size:11px; }
+.landing-trust>span { font-size:9px; }
+.landing-trust b { font-size:10px; }
+.section-intro>p,.landing-bottom>div>p { font-size:14px; }
+.feature-grid article>span { font-size:9px; }
+.feature-grid h3 { font-size:15px; }
+.feature-grid p { font-size:12px; }
+.landing-footer>span { font-size:10px; }
+.auth-intro>p { font-size:15px; }
+.auth-intro-note { font-size:12px; }
+.auth-card-heading h2 { font-size:21px; }
+.auth-card-heading p { font-size:12px; }
+.auth-label { font-size:11px; }
+.role-option { min-height:52px; }
+.role-option strong { font-size:10px; }
+.role-option small { font-size:9px; }
+.auth-input { font-size:13px; }
+.demo-hint { font-size:10px; }
+.demo-hint code { font-size:10px; }
+.auth-error { font-size:11px; }
+.auth-submit { font-size:13px; }
+.auth-security,.auth-footer,.auth-footer button { font-size:10px; }
+.portal-school strong { font-size:12px; }
+.portal-school small { font-size:10px; }
+.portal-signout { font-size:11px; }
+.portal-welcome h1 { font-size:28px; }
+.portal-welcome p { font-size:13px; }
+.portal-tabs button { font-size:12px; }
+.portal-metric>span { font-size:11px; }
+.portal-metric>strong { font-size:23px; }
+.portal-metric>small { font-size:10px; }
+.portal-chip { font-size:10px; }
+.child-card>div:nth-child(2) strong { font-size:12px; }
+.child-card>div:nth-child(2) span,.class-row small { font-size:10px; }
+.class-row strong { font-size:11px; }
+.portal-summary-text p { font-size:11px; }
+.portal-event strong { font-size:11px; }
+.portal-event small { font-size:10px; }
+.portal-detail h2 { font-size:21px; }
+.portal-detail>p { font-size:13px; }
+.result-preview strong,.result-preview span { font-size:11px; }
+.portal-footer { font-size:10px; }
+@media (max-width: 680px) {
+  .brand { font-size:20px; }
+  .page-heading h1 { font-size:25px; }
+  .page-heading p,.section-intro>p,.landing-bottom>div>p { font-size:13px; }
+  .hero-copy h1 { font-size:43px; }
+  .hero-copy>p { font-size:14px; }
+  .hero-secondary,.landing-signin { font-size:11px; }
+  .landing-trust b { font-size:9px; }
+  .feature-grid h3 { font-size:14px; }
+  .feature-grid p { font-size:11px; }
+  .landing-footer>span { font-size:9px; }
+  .auth-intro h1 { font-size:29px; }
+  .auth-intro>p { font-size:13px; }
+  .role-option { min-height:48px; }
+  .role-option strong { font-size:9px; }
+  .role-option small { font-size:8px; }
+  .portal-header .landing-brand { font-size:14px; }
+  .portal-school strong { font-size:10px; }
+  .portal-school small { font-size:9px; }
+  .portal-signout { font-size:10px; }
+  .portal-welcome h1 { font-size:22px; }
+  .portal-welcome p { font-size:11px; }
+  .portal-tabs button { font-size:11px; }
+  .portal-metric>span { font-size:10px; }
+  .portal-metric>strong { font-size:20px; }
+  .portal-metric>small { font-size:9px; }
+  .portal-event strong { font-size:10px; }
+  .portal-event small { font-size:9px; }
+}
+
+/* Minimum comfortable reading sizes for the actual application UI. */
+.nav-item { font-size:14px; }
+.school-copy strong,.profile-copy strong { font-size:14px; }
+.school-copy span,.profile-copy span,.term-card span { font-size:12px; }
+.topbar,.breadcrumb { font-size:13px; }
+.search-box input { font-size:13px; }
+.page-heading h1 { font-size:30px; }
+.page-heading p,.panel-heading p { font-size:14px; }
+.metric-top { font-size:14px; }
+.panel-heading h2 { font-size:16px; }
+tbody td { font-size:12px; }
+.student-cell strong,.payment-copy strong,.payment-right>strong { font-size:12px; }
+.status { font-size:10px; }
+.landing-nav nav a,.landing-signin,.hero-secondary { font-size:14px; }
+.hero-copy>p,.section-intro>p,.landing-bottom>div>p { font-size:16px; }
+.feature-grid article>span { font-size:10px; }
+.feature-grid h3 { font-size:16px; }
+.feature-grid p { font-size:13px; }
+.auth-intro>p { font-size:16px; }
+.auth-intro-note { font-size:13px; }
+.auth-card-heading h2 { font-size:22px; }
+.auth-card-heading p { font-size:13px; }
+.auth-label { font-size:12px; }
+.role-option { min-height:56px; }
+.role-option strong { font-size:11px; }
+.role-option small { font-size:10px; }
+.auth-input { font-size:14px; }
+.demo-hint,.demo-hint code { font-size:11px; }
+.auth-error { font-size:12px; }
+.auth-security,.auth-footer,.auth-footer button { font-size:11px; }
+.portal-school strong { font-size:13px; }
+.portal-school small { font-size:11px; }
+.portal-signout { font-size:12px; }
+.portal-welcome h1 { font-size:30px; }
+.portal-welcome p { font-size:14px; }
+.portal-tabs button { font-size:13px; }
+.portal-metric>span { font-size:12px; }
+.portal-metric>strong { font-size:24px; }
+.portal-metric>small { font-size:11px; }
+.portal-detail h2 { font-size:22px; }
+.portal-detail>p { font-size:14px; }
+@media (max-width: 680px) {
+  .nav-item { font-size:13px; }
+  .page-heading h1 { font-size:26px; }
+  .page-heading p,.panel-heading p { font-size:13px; }
+  .hero-copy h1 { font-size:43px; }
+  .hero-copy>p,.section-intro>p,.landing-bottom>div>p { font-size:14px; }
+  .landing-nav nav a,.landing-signin,.hero-secondary { font-size:12px; }
+  .feature-grid h3 { font-size:15px; }
+  .feature-grid p { font-size:12px; }
+  .auth-intro h1 { font-size:30px; }
+  .auth-intro>p { font-size:14px; }
+  .role-option { min-height:52px; }
+  .role-option strong { font-size:10px; }
+  .role-option small { font-size:9px; }
+  .portal-school strong { font-size:11px; }
+  .portal-school small { font-size:10px; }
+  .portal-signout { font-size:11px; }
+  .portal-welcome h1 { font-size:23px; }
+  .portal-welcome p { font-size:12px; }
+  .portal-tabs button { font-size:12px; }
+  .portal-metric>span { font-size:11px; }
+  .portal-metric>strong { font-size:21px; }
+  .portal-metric>small { font-size:10px; }
+}
+/* Second pass: enlarge the text users read and select across all portals. */
+.nav-item { font-size:15px; }
+.school-copy strong,.profile-copy strong { font-size:15px; }
+.school-copy span,.profile-copy span,.term-card span { font-size:13px; }
+.topbar,.breadcrumb,.search-box input { font-size:14px; }
+.page-heading h1 { font-size:32px; }
+.page-heading p,.panel-heading p { font-size:15px; }
+.metric-top { font-size:15px; }
+.panel-heading h2 { font-size:17px; }
+tbody td { font-size:13px; }
+.student-cell strong,.payment-copy strong,.payment-right>strong { font-size:13px; }
+.status { font-size:11px; }
+.landing-nav nav a,.landing-signin,.hero-secondary { font-size:15px; }
+.hero-copy>p,.section-intro>p,.landing-bottom>div>p { font-size:17px; }
+.feature-grid article>span { font-size:11px; }
+.feature-grid h3 { font-size:17px; }
+.feature-grid p { font-size:14px; }
+.auth-intro>p { font-size:17px; }
+.auth-intro-note { font-size:14px; }
+.auth-card-heading h2 { font-size:24px; }
+.auth-card-heading p { font-size:14px; }
+.auth-label { font-size:13px; }
+.role-option { min-height:60px; }
+.role-option strong { font-size:13px; }
+.role-option small { font-size:11px; }
+.auth-input { font-size:15px; }
+.demo-hint,.demo-hint code { font-size:12px; }
+.auth-error { font-size:13px; }
+.auth-security,.auth-footer,.auth-footer button { font-size:12px; }
+.portal-school strong { font-size:14px; }
+.portal-school small { font-size:12px; }
+.portal-signout { font-size:13px; }
+.portal-welcome h1 { font-size:32px; }
+.portal-welcome p { font-size:15px; }
+.portal-tabs button { font-size:14px; }
+.portal-metric>span { font-size:13px; }
+.portal-metric>strong { font-size:25px; }
+.portal-metric>small { font-size:12px; }
+.portal-detail h2 { font-size:24px; }
+.portal-detail>p { font-size:15px; }
+@media (max-width: 680px) {
+  .nav-item { font-size:14px; }
+  .page-heading h1 { font-size:28px; }
+  .page-heading p,.panel-heading p { font-size:14px; }
+  .hero-copy h1 { font-size:42px; }
+  .hero-copy>p,.section-intro>p,.landing-bottom>div>p { font-size:15px; }
+  .landing-nav nav a,.landing-signin,.hero-secondary { font-size:13px; }
+  .feature-grid h3 { font-size:16px; }
+  .feature-grid p { font-size:13px; }
+  .auth-intro h1 { font-size:31px; }
+  .auth-intro>p { font-size:15px; }
+  .role-option { min-height:56px; }
+  .role-option strong { font-size:11px; }
+  .role-option small { font-size:10px; }
+  .portal-school strong { font-size:12px; }
+  .portal-school small { font-size:11px; }
+  .portal-signout { font-size:12px; }
+  .portal-welcome h1 { font-size:25px; }
+  .portal-welcome p { font-size:13px; }
+  .portal-tabs button { font-size:13px; }
+  .portal-metric>span { font-size:12px; }
+  .portal-metric>strong { font-size:22px; }
+  .portal-metric>small { font-size:11px; }
+}
+/* Landing page typography: normalize nav actions and improve reading contrast. */
+.landing-nav nav a,
+.landing-nav .landing-nav-action,
+.landing-nav .landing-signin { font-size:15px!important; font-weight:700!important; }
+.landing-nav .landing-brand { font-size:20px; font-weight:800; }
+.landing-nav .landing-cta { font-size:14px; font-weight:700; }
+.hero-copy h1 { font-size:clamp(48px,5.2vw,66px); font-weight:800; }
+.hero-copy>p,.section-intro>p,.landing-bottom>div>p { font-size:17px; line-height:1.75; }
+.hero-badge { font-size:11px; font-weight:800; }
+.hero-secondary { font-size:14px; font-weight:700; }
+.hero-proof p { font-size:13px; line-height:1.55; }
+.landing-trust>span { font-size:10px; font-weight:800; }
+.landing-trust b { font-size:11px; font-weight:800; }
+.section-intro h2 { font-size:44px; font-weight:800; }
+.feature-grid article>span { font-size:10px; font-weight:800; }
+.feature-grid h3 { font-size:18px; font-weight:800; }
+.feature-grid p { font-size:14px; line-height:1.65; }
+.landing-bottom h2 { font-size:36px; font-weight:800; }
+.landing-footer>span { font-size:11px; font-weight:600; }
+@media (max-width: 680px) {
+  .landing-nav .landing-brand { font-size:18px; }
+  .landing-nav .landing-signin { font-size:13px!important; }
+  .landing-nav .landing-cta { font-size:12px; }
+  .hero-copy h1 { font-size:clamp(42px,11vw,52px); }
+  .hero-copy>p,.section-intro>p,.landing-bottom>div>p { font-size:15px; }
+  .section-intro h2 { font-size:34px; }
+  .feature-grid h3 { font-size:16px; }
+  .feature-grid p { font-size:14px; }
+  .landing-bottom h2 { font-size:30px; }
+}
+
+/* Classroom photograph palette: chalkboard navy, uniform blue, warm ivory, and ochre. */
+:root {
+  --school-navy:#27354f;
+  --school-blue:#375887;
+  --school-blue-soft:#eaf0fa;
+  --school-gold:#c79543;
+  --school-gold-soft:#fff3d9;
+  --school-ivory:#f7f3e9;
+  --school-paper:#fffdf8;
+  --school-line:#e8dfcf;
+  --school-text:#273247;
+  --school-muted:#687384;
+  color:var(--school-text);
+  background:var(--school-ivory);
+}
+body,.app-shell,.portal-shell { background:var(--school-ivory); color:var(--school-text); }
+.main-area { background:#f5f2eb; }
+.sidebar,.topbar,.metric-card,.panel,.modal,.auth-card,.portal-main-card,.portal-side-card { background:var(--school-paper); border-color:var(--school-line); }
+.sidebar { border-right-color:#e3d9c8; }
+.topbar { border-bottom-color:var(--school-line); }
+.brand-mark,.school-avatar { background:var(--school-navy); }
+.button-primary,.landing-cta,.button-dark { background:var(--school-blue); border-color:var(--school-blue); box-shadow:0 2px 4px rgba(39,53,79,.16); }
+.button-primary:hover,.landing-cta:hover,.button-dark:hover { background:#2b466f; border-color:#2b466f; }
+.button-secondary { background:var(--school-paper); border-color:var(--school-line); color:#44516a; }
+.nav-item.nav-active { background:var(--school-blue-soft); color:var(--school-navy); }
+.nav-item:hover { background:#f0eee8; color:var(--school-navy); }
+.live-dot { background:var(--school-gold); }
+.notice { background:#f4f0e5; border-color:#eadfc8; color:#6f5527; }
+.text-link,.auth-registration-links button,.landing-nav nav a:hover,.hero-secondary:hover { color:var(--school-blue); }
+.landing-page { background:var(--school-ivory); color:var(--school-text); }
+.landing-nav nav a { color:#566176; }
+.landing-nav-action,.landing-signin { color:#45536a; }
+.hero-badge { background:rgba(255,253,248,.94); border-color:#e6dcc7; color:#5a6170; }
+.hero-badge>span { background:var(--school-gold); box-shadow:0 0 0 4px rgba(199,149,67,.16); }
+.hero-copy h1,.section-intro h2,.landing-bottom h2 { color:var(--school-navy); }
+.hero-copy h1 span,.section-intro h2 span { color:var(--school-blue); }
+.hero-copy>p,.section-intro>p,.landing-bottom>div>p { color:#596477; }
+.hero-secondary { color:var(--school-blue); }
+.landing-trust { border-color:var(--school-line); }
+.landing-trust>span,.feature-grid article>span { color:#7b7160; }
+.landing-trust b { color:#526078; }
+.landing-trust b svg { color:var(--school-blue); }
+.landing-features { color:var(--school-text); }
+.feature-grid article { background:var(--school-paper); border-color:var(--school-line); }
+.feature-icon.mint,.feature-icon.lilac { background:var(--school-blue-soft); color:var(--school-blue); }
+.feature-icon.peach { background:var(--school-gold-soft); color:#9a6a22; }
+.feature-grid h3 { color:var(--school-navy); }
+.feature-grid p { color:#626e7f; }
+.landing-bottom { background:#efe7d5; }
+.landing-footer>span { color:#716b60; }
+.auth-page { background:radial-gradient(circle at 8% 12%,#eee5d3 0,transparent 32%),#f7f3e9; color:var(--school-text); }
+.auth-icon { color:var(--school-blue); background:var(--school-blue-soft); }
+.auth-input,.public-form-card .auth-input,.student-application-fields .auth-input { border-color:#d8d4cb; background:#fffefa; color:var(--school-text); }
+.auth-input:focus,.public-form-card .auth-input:focus { border-color:var(--school-blue); box-shadow:0 0 0 3px rgba(55,88,135,.13); }
+.role-option.selected { border-color:#91a8ca; background:var(--school-blue-soft); box-shadow:0 0 0 2px rgba(55,88,135,.08); }
+.role-option:hover { border-color:#b8c4d6; background:#f7f8fb; }
+.registration-flow-hint { background:#f8f2e4; border-color:#e8dcc5; }
+.application-reference { background:#f8f2e4; border-color:#e8dcc5; }
+.application-reference strong { color:var(--school-blue); }
+.success-mark { background:var(--school-blue-soft); color:var(--school-blue); }
+.portal-tab-active,.portal-chip { color:var(--school-blue); }
+.portal-tabs button.portal-tab-active { color:var(--school-blue); border-bottom-color:var(--school-blue); }
+.metric-icon.teal,.metric-icon.blue { background:var(--school-blue-soft); color:var(--school-blue); }
+.metric-icon.amber { background:var(--school-gold-soft); color:#9a6a22; }
+.landing-hero { background-color:#f5f0e4; background-image:none; }
+.hero-visual::before { display:none; }
+.landing-classroom-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 45%; border-radius:22px; box-shadow:0 25px 70px rgba(39,53,79,.2); }
+.hero-visual .visual-glow { opacity:0; }
+.preview-window { z-index:2; width:min(68%,480px); position:absolute; right:0; bottom:12px; transform:none; background:rgba(255,253,248,.96); border-color:rgba(255,255,255,.72); box-shadow:0 22px 60px rgba(27,41,61,.3); }
+.floating-note { z-index:3; right:auto; left:8px; bottom:18px; background:var(--school-paper); }
+.public-form-intro { background-image:linear-gradient(150deg,rgba(32,45,67,.84),rgba(42,64,98,.73)),url('/images/nigerian-classroom-lesson.png'); background-position:center; }
+@media (max-width:900px) {
+  .landing-classroom-image { object-position:46% center; }
+  .preview-window { width:min(72%,500px); }
+}
+@media (max-width:680px) {
+  .landing-classroom-image { object-position:46% center; }
+  .preview-window { width:70%; right:0; bottom:9px; }
+  .floating-note { left:3px; bottom:10px; }
+  .landing-hero { background:#f5f0e4; }
+}
+
+/* Keep the supplied classroom photo behind every section of the landing page. */
+.landing-page {
+  position:relative;
+  isolation:isolate;
+  background:transparent;
+}
+.landing-page::before {
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:linear-gradient(115deg,rgba(249,246,237,.58),rgba(245,242,234,.48)),url('/images/nigerian-classroom-lesson.png');
+  background-size:cover;
+  background-position:center 44%;
+  background-repeat:no-repeat;
+}
+.landing-page>header,.landing-page>main,.landing-page>footer { position:relative; z-index:1; }
+.landing-nav { background:rgba(255,253,248,.78); backdrop-filter:blur(12px); }
+.landing-hero { background:transparent; }
+.landing-classroom-image { display:none; }
+.hero-copy { padding:28px; border-radius:20px; background:rgba(255,253,248,.84); border:1px solid rgba(255,255,255,.76); box-shadow:0 18px 50px rgba(39,53,79,.09); backdrop-filter:blur(10px); }
+.landing-trust { background:rgba(255,253,248,.78); backdrop-filter:blur(8px); }
+.landing-features { background:rgba(255,253,248,.58); backdrop-filter:blur(5px); }
+.landing-bottom { background:rgba(239,231,213,.91); backdrop-filter:blur(8px); }
+.landing-footer { background:rgba(255,253,248,.78); backdrop-filter:blur(8px); }
+@media (max-width:680px) {
+  .hero-copy { padding:20px 17px; border-radius:16px; }
+  .landing-nav { background:rgba(255,253,248,.9); }
+}
+.student-registration-intro {
+  background-image:linear-gradient(150deg,rgba(39,53,79,.7),rgba(55,88,135,.42)),url('/images/student-registration.png');
+  background-position:center 38%;
+}
+.parent-signup-intro {
+  background-image:linear-gradient(150deg,rgba(39,53,79,.64),rgba(55,88,135,.34)),url('/images/parent-signup-mentoring.png');
+  background-position:center 37%;
+}
+@media (max-width:900px) {
+  .student-registration-intro { background-position:center 34%; }
+  .parent-signup-intro { background-position:center 34%; }
+}
+
+/* Landing header alignment: equal vertical centers and a stable three-column row. */
+.landing-nav {
+  display:grid;
+  grid-template-columns:minmax(max-content,1fr) auto minmax(max-content,1fr);
+  align-items:center;
+  column-gap:clamp(14px,2vw,28px);
+}
+.landing-nav>.landing-brand { justify-self:start; white-space:nowrap; }
+.landing-nav nav {
+  min-width:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(10px,1.35vw,20px);
+  white-space:nowrap;
+}
+.landing-nav nav a,.landing-nav .landing-nav-action {
+  min-height:40px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1.2;
+}
+.landing-nav .landing-nav-action { padding:0; }
+.landing-nav>div { justify-self:end; min-height:40px; gap:12px; white-space:nowrap; }
+.landing-nav .landing-signin { min-height:40px; padding:0 2px; line-height:1.2; }
+.landing-nav .landing-cta { min-height:40px; }
+@media (min-width:901px) and (max-width:1100px) {
+  .landing-nav { padding-left:20px; padding-right:20px; column-gap:12px; }
+  .landing-nav nav { gap:9px; }
+  .landing-nav nav a,.landing-nav .landing-nav-action { font-size:13px!important; }
+  .landing-nav .landing-brand { font-size:18px; }
+  .landing-nav>div { gap:8px; }
+  .landing-nav .landing-cta { padding:0 10px; font-size:12px; }
+}
+@media (max-width:900px) {
+  .landing-nav { display:flex; justify-content:space-between; }
+  .landing-nav nav { display:none; }
+}

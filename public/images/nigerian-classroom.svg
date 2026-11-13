@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4ead7"/><stop offset="1" stop-color="#d7e3cf"/></linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#315b4c"/><stop offset="1" stop-color="#183b34"/></linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c58a58"/><stop offset="1" stop-color="#8d593b"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="28"/></filter>
+  </defs>
+  <path fill="url(#wall)" d="M0 0h1600v900H0z"/>
+  <circle cx="1450" cy="120" r="210" fill="#f6d98d" opacity=".34" filter="url(#soft)"/>
+  <path fill="#ecd9b9" d="M0 0h1600v116H0z"/>
+  <path fill="#f9f4e9" d="M0 116h1600v28H0z" opacity=".75"/>
+  <path fill="#91b7ad" d="M92 183h278v290H92z"/>
+  <path fill="#d4eee1" d="M111 202h240v250H111z"/>
+  <path fill="#a8d2bf" d="M111 202h240v250H111z" opacity=".55"/>
+  <path stroke="#f8f3e8" stroke-width="18" d="M231 203v248M112 327h238"/>
+  <path fill="#486a52" d="M99 455h265v22H99z"/>
+  <path fill="#886244" d="M80 167h301v18H80z"/>
+  <path fill="url(#board)" stroke="#a4774e" stroke-width="18" d="M431 185h731v366H431z"/>
+  <path fill="#f3f0d8" opacity=".87" d="M489 257c67-32 118 28 178-2m26 3 89-1m46-2 114 1m52 5 85-2M494 320c85 3 109-5 190 2m38 0 127-1m57 0 121 2m-521 73c63-4 99 5 163 0m33 2 117-2m57 2 119-1" stroke="#f3f0d8" stroke-linecap="round" stroke-width="8"/>
+  <path stroke="#e7c782" stroke-linecap="round" stroke-width="8" d="m500 444 35-45 36 45m-36-45v76m116-73h49m-49 27h49m-49 27h49m59-52h70m-70 27h70m-70 27h70"/>
+  <path fill="#e8dfca" d="M0 654h1600v246H0z"/>
+  <path fill="url(#floor)" d="M0 741h1600v159H0z" opacity=".93"/>
+  <path stroke="#a9734c" stroke-width="8" opacity=".65" d="M0 791h1600M0 850h1600M240 742v158m370-158v158m365-158v158m344-158v158"/>
+  <!-- Teacher: white blouse, green wrapper, chalk in hand -->
+  <ellipse cx="1284" cy="724" rx="175" ry="37" fill="#543c2d" opacity=".2"/>
+  <path fill="#34251e" d="M1225 300c-5-83 43-137 112-137 72 0 117 64 103 148l-13 96-189-3z"/>
+  <path fill="#5c3324" d="M1234 286c-3-67 33-111 94-111 65 0 103 50 94 114l-8 70h-175z"/>
+  <ellipse cx="1320" cy="270" rx="77" ry="92" fill="#7d4830"/>
+  <path fill="#38251f" d="M1245 239c12-84 117-108 172-37-44-13-76-13-101 5-21 16-31 33-71 32z"/>
+  <path fill="#38251f" d="M1250 239c-8 59 8 88 22 106-36-6-56-46-45-92z"/>
+  <path stroke="#38251f" stroke-width="8" stroke-linecap="round" d="M1284 267h20m40 0h19"/>
+  <path stroke="#502d23" stroke-width="5" stroke-linecap="round" d="M1301 310q18 14 37-1"/>
+  <path fill="#fffdf7" d="M1234 365q86-37 168 1l56 213-67 42h-172l-47-55z"/>
+  <path fill="#176d51" d="m1300 356 31 28 30-28 23 111-52 46-55-46z"/>
+  <path fill="#d49a54" d="m1329 382 13 28-13 72-13-72z"/>
+  <path fill="#176d51" d="M1220 575h213l37 143h-278z"/>
+  <path stroke="#b8d778" stroke-width="13" d="M1231 604h216m-238 46h265m-273 45h286" opacity=".9"/>
+  <path fill="#533126" d="M1248 698h74v143h-78zm104 0h75l22 143h-82z"/>
+  <path fill="#231e1b" d="M1236 824h98v30h-120q0-19 22-30zm120 0h98q28 9 28 30h-119z"/>
+  <path fill="#7d4830" d="M1234 384q-33 21-55 67l-44 99q-8 18 13 27 17 8 28-10l59-81 52-76zm173 0q41 18 55 48l-52 39-53-31z"/>
+  <path fill="#7d4830" d="m1193 540-26-17-22 33 32 20q18 0 16-18z"/>
+  <path stroke="#f4df9d" stroke-width="9" stroke-linecap="round" d="m1143 521 27-44"/>
+  <!-- Students in white shirts and green checked uniforms -->
+  <ellipse cx="625" cy="723" rx="241" ry="31" fill="#543c2d" opacity=".16"/>
+  <path fill="#392720" d="M448 512c-5-71 28-114 86-114 61 0 95 53 87 119l-8 67H455z"/>
+  <ellipse cx="531" cy="510" rx="67" ry="78" fill="#75432e"/>
+  <path fill="#34231d" d="M464 489c12-67 82-98 132-51 18 16 26 42 22 69-23-11-35-30-58-35-32-7-57 16-96 17z"/>
+  <path stroke="#33241e" stroke-width="7" stroke-linecap="round" d="M499 512h15m34 0h15"/>
+  <path fill="#fffdf7" d="M458 585q72-36 143 2l38 124H431z"/>
+  <path fill="#176d51" d="m502 580 27 28 28-28 19 89-48 34-46-34z"/>
+  <path fill="#d49a54" d="m529 607 12 24-12 56-12-56z"/>
+  <path fill="#1a654e" d="M431 693h218l21 20-20 22H408z"/>
+  <path fill="#b8d778" d="M441 697h188v12H441zm-15 22h209v10H426z"/>
+  <path fill="#69442e" d="m474 735 65 0-12 75h-66zm93 0h62l22 75h-66z"/>
+  <path fill="#241e1a" d="M450 800h78q16 8 15 23H435q0-15 15-23zm116 0h77q16 7 20 23h-84z"/>
+  <path fill="#75432e" d="m458 611-49 22-26 61q-7 16 10 22 16 5 24-9l40-49zm145 1 39 13 33 54q9 16-7 24-14 7-23-7l-47-49z"/>
+  <path fill="#583c2c" d="M349 681h390v20H349z"/><path fill="#8b5a3d" d="M369 701h18v85h-18zm332 0h18v85h-18z"/>
+  <path fill="#f7f1dc" d="M555 629h103v40H555z"/><path stroke="#8ca39a" stroke-width="4" d="M570 644h72m-72 12h50"/>
+  <!-- second student -->
+  <path fill="#34231d" d="M718 538c-8-59 23-100 70-100 50 0 81 43 72 101l-8 54H727z"/>
+  <ellipse cx="788" cy="527" rx="58" ry="69" fill="#845037"/>
+  <path fill="#38251f" d="M730 506c12-65 82-87 128-39 11 12 18 29 17 51-33-7-48-27-76-28-27 0-43 16-69 16z"/>
+  <path fill="#fffdf7" d="M724 591q62-32 127 2l31 104H697z"/>
+  <path fill="#176d51" d="m770 587 18 22 21-22 15 78-36 26-35-26z"/>
+  <path fill="#d49a54" d="m788 609 9 20-9 48-10-48z"/>
+  <path fill="#24684f" d="M700 687h184l18 17-15 19H681z"/>
+  <path stroke="#b8d778" stroke-width="10" d="M697 700h190m-194 17h197"/>
+  <path fill="#795034" d="m742 724 50 0-7 68h-50zm65 0h48l19 68h-52z"/>
+  <path fill="#241e1a" d="M731 785h57q13 7 13 18h-82q0-11 12-18zm72 0h54q14 6 18 18h-65z"/>
+  <path fill="#765039" d="m724 616-43 19-17 49q-5 14 9 18 14 3 20-9l35-42zm123 0 37 12 31 47q7 13-6 19-13 5-20-6l-44-40z"/>
+  <path fill="#593d2d" d="M647 679h339v18H647z"/><path fill="#8b5a3d" d="M665 697h17v77h-17zm293 0h17v77h-17z"/>
+  <path fill="#f7f1dc" d="M772 632h88v34h-88z"/><path stroke="#8ca39a" stroke-width="4" d="M785 645h60m-60 11h42"/>
+  <path fill="#253f32" d="M0 880h1600v20H0z" opacity=".65"/>
+</svg>
